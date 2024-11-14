@@ -13,10 +13,10 @@ public class GetFileDemo {
 		BackupManager bm = gf.getBackupManager();
 		BackupManager bm1 = gf.getBackupManager("1"); // New instance
 		BackupManager bm2 = gf.getBackupManager(); // Same instance as bm
-		bm.backup();
-		bm1.backup();
 
+		bm1.backup();
 		gf.updateAll();
+		bm.backup();
 		System.out.println("Updated");
 		myWait();
 
