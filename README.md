@@ -7,11 +7,13 @@ instance via GetFile.getBackupManager. Only the main GetFile class is required
 for file updating.
 
 ## Terminal 1: Run server
+```
 cd getfile-demo/server
 python3 -m http.server 8088
-
+```
 ## Terminal 2: Run GetFileDemo
+```
 cd getfile-demo
 javac -cp lib/getfile-all.jar GetFileDemo.java
 java -cp .:lib/getfile-all.jar GetFileDemo
-
+```
