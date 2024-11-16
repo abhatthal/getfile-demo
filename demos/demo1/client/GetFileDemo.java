@@ -35,6 +35,11 @@ public class GetFileDemo {
 		
 		System.out.println("Rolled back to before update.");
 		bm1.rollback();
+		System.out.println("Delete server cache");
+		File serverMetaCache = new File("meta.json");
+		if (serverMetaCache.exists()) {
+			serverMetaCache.delete();
+		}
 	}
 
 	public static void myWait() {

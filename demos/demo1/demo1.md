@@ -7,6 +7,7 @@ This demo shows
 * Demonstrates multiple snapshots
 * Existing outdated client files
 * Updating all files and updating files individually
+* No initial server cache
 
 ## Terminal 1: Run server
 ```
