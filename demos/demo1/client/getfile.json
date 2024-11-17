@@ -1,10 +1,12 @@
 {
   "file1": {
     "version": "v0.1.1",
+	"path": "data/file1.txt",
     "prompt": "true"
   },
   "file2": {
     "version": "v1.0.0",
+	"path": "data/file2.txt",
     "prompt": "false"
   }
 }
