@@ -2,14 +2,29 @@
 
 Demonstrate how GetFile can update itself.
 
-This demo doesn't use the shared libs/ resource. Instead it has its own libs/
-directory with an outdated version of getfile-all.jar. This version has backupExists
-hidden as package-private, and therefore is not accessible. We will update to the
-latest version available on GitHub and verify that we're then able to access
-backupExists.
+Instead of using the shared libs/ symlink, we have a custom getfile-all.jar
+with a message embedded inside the updateAll method.
 
-TODO: This demo shows:
-	* Start with a version of GetFile that's outdated (backupExists not exposed)
-	* Connect to GitHub file server to get latest version
-	* Unpause client and watch as backupExists call succeeds.
+We will demonstrate
+* the message present in the outdated library
+* gone after updating
+* back again after rolling back
+
+Libraries are difficult to load dynamically at runtime.
+Rerunning the application with toggle logic (like in demo2) will allow us to
+demonstrate the changes.
+
+```
+cd client
+javac -cp .:libs/getfile-all.jar GetFileDemo.java
+java -cp .:libs/getfile-all.jar GetFileDemo
+```
+
+There is no need to start a local server here as we are connecting to GitHub.
+Alternate running the Java application to toggle the old and new versions.
+The message "Hello! I'm an outdated JAR invoked inside GetFile.updateAll" is
+seen when running the old version. You don't need to recompile GetFileDemo,
+but the invocation requires specifying the classpath.
+
+After done with this demo, use the `clean.sh` script to revert to initial state.
 

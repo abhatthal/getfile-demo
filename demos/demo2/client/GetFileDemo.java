@@ -13,30 +13,18 @@ public class GetFileDemo {
 		BackupManager bm1 = gf.getBackupManager("bm1");
 		BackupManager bm2 = gf.getBackupManager("bm2");
 
-		/**
-		 * Expected behavior:
-		 *  Create bm1 and bm2
-		 *  roll to bm1 and now only has bm2
-		 *  roll to bm2 and now only has bm1
-		 *  roll to bm1 and now only has bm2 ... toggles state forever
-		 **/
-
-		if (!bm1.backupExists() && !bm2.backupExists()) {
-			System.out.println("Update files with pre and post backups.");
-			bm1.backup();
-			gf.updateAll();
-			bm2.backup();
-		} else if (bm1.backupExists() && !bm2.backupExists()) {
-			System.out.println("Rollback to 1 and prepare for future roll to 2");
+		if (bm1.backupExists() && !bm2.backupExists()) {
+			System.out.println("Backup updated state and rollback to initial state");
 			bm2.backup();
 			bm1.rollback();
 		} else if (!bm1.backupExists() && bm2.backupExists()) {
-			System.out.println("Rollback to 2 and prepare for future roll to 1");
+			System.out.println("Backup initial state and rollback to updated state");
 			bm1.backup();
 			bm2.rollback();
 		} else {
-			System.out.println("Start toggle with just rolling 1");
-			bm1.rollback();
+			System.out.println("Backup initial state and update");
+			bm1.backup();
+			gf.updateAll();
 		}
 	}
 }
