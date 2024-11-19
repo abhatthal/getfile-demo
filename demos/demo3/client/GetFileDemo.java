@@ -9,8 +9,7 @@ public class GetFileDemo {
 	public static void main(String[] Args) {
 		GetFile gf = new GetFile(
 			/*clientMetaFile=*/new File("libs/client.json"),
-			/*serverMetaURI=*/URI.create(
-				"https://raw.githubusercontent.com/abhatthal/getfile/refs/heads/main/libs/libs.json"));
+			/*serverMetaURI=*/URI.create(GetFile.LATEST_JAR_URL));
 		BackupManager bm1 = gf.getBackupManager("bm1");
 		BackupManager bm2 = gf.getBackupManager("bm2");
 
