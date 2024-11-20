@@ -24,14 +24,14 @@ public class GetFileDemo {
 
 		// Get airbus and boeing plane metadata for planes demo.
 		GetFile airbus = new GetFile(
-			/*clientMetaFile=*/new File("airbus-client.json"),
+			/*clientMetaFile=*/new File("data/airbus-client.json"),
 			/*serverMetaURI=*/URI.create(
 				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/airbus.json"));
 		BackupManager airbusBak = airbus.getBackupManager();
 		airbusBak.backup();
 
 		GetFile boeing = new GetFile(
-			/*clientMetaFile=*/new File("boeing-client.json"),
+			/*clientMetaFile=*/new File("data/boeing-client.json"),
 			/*serverMetaURI=*/URI.create(
 				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/boeing.json"));
 		BackupManager boeingBak = boeing.getBackupManager();

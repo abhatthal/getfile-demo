@@ -1,4 +1,5 @@
 #!/bin/sh
 
-rm *.json libs/libs.json
+rm libs/libs.json
+rm -rf data/
 
