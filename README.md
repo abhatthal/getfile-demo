@@ -10,9 +10,7 @@ GetFile source: https://github.com/abhatthal/getfile
 * [demo1](demos/demo1): Update files and rollback over local server
 * [demo2](demos/demo2): Toggle state via BackupManagers over local server
 * [demo3](demos/demo3): GetFile self-updating with GitHub latest version
-* TODO demo4: One GetFile instance over one remote file server
-* TODO demo5: Two GetFile instances over one remote file server
-* TODO demo6: Two GetFile instances over two remote file servers
+* [demo4](demos/demo4): Self-updating with complex multiple metadata project
 
 Detailed instructions on using each demo can be found in its respective markdown document.
 
