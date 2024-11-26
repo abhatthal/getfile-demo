@@ -47,11 +47,11 @@ public class GetFileDemo {
 		System.out.println("Updated from server");
 		myWait();
 
-		jarUpdaterBak.rollback();
-		airbusBak.rollback();
-		boeingBak.rollback();
-		System.out.println("Rolled back to backup");
-		myWait();
+		//jarUpdaterBak.rollback();
+		//airbusBak.rollback();
+		//boeingBak.rollback();
+		//System.out.println("Rolled back to backup");
+		//myWait();
 
 		System.out.print("Updated: ");
 		printFiles(updated);
