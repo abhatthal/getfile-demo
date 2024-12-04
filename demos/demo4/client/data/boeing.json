@@ -1,0 +1,23 @@
+{
+	"737.md": {
+		"version": "v2.3.0",
+		"path": "boeing/737/737.md"
+	},
+	"737 Data": {
+		"version": "v2.3.0",
+		"path": "boeing/737/737.dat"
+	},
+	"737 Readme": {
+		"version": "v2.3.0",
+		"path": "boeing/737/README.md"
+	},
+	"767.md": {
+		"version": "v1.0.1",
+		"path": "boeing/767/767.md"
+	},
+	"737 OldFile": {
+		"version": "v0.3.4",
+		"path": "boeing/737/old-file"
+	}
+}
+

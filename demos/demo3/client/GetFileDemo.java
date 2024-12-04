@@ -8,6 +8,7 @@ import java.net.URI;
 public class GetFileDemo {
 	public static void main(String[] Args) {
 		GetFile gf = new GetFile(
+			/*name=*/"GetFileDemo",
 			/*clientMetaFile=*/new File("libs/client.json"),
 			/*serverMetaURI=*/URI.create(GetFile.LATEST_JAR_URL));
 		BackupManager bm1 = gf.getBackupManager("bm1");

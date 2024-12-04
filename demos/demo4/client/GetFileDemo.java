@@ -17,6 +17,7 @@ public class GetFileDemo {
 	public static void main(String[] Args) {
 		// Get the latest version of the code. Not loaded in this session.
 		GetFile jarUpdater = new GetFile(
+			/*name=*/"GetFileDemo(jarUpdater)",
 			/*clientMetaFile=*/new File("libs/client.json"),
 			/*serverMetaURI=*/URI.create(GetFile.LATEST_JAR_URL));
 		BackupManager jarUpdaterBak = jarUpdater.getBackupManager();
@@ -24,6 +25,7 @@ public class GetFileDemo {
 
 		// Get airbus and boeing plane metadata for planes demo.
 		GetFile airbus = new GetFile(
+			/*name=*/"GetFileDemo(airbus)",
 			/*clientMetaFile=*/new File("data/airbus-client.json"),
 			/*serverMetaURI=*/URI.create(
 				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/airbus.json"));
@@ -31,6 +33,7 @@ public class GetFileDemo {
 		airbusBak.backup();
 
 		GetFile boeing = new GetFile(
+			/*name=*/"GetFileDemo(boeing)",
 			/*clientMetaFile=*/new File("data/boeing-client.json"),
 			/*serverMetaURI=*/URI.create(
 				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/boeing.json"));
