@@ -19,7 +19,8 @@ public class GetFileDemo {
 		GetFile jarUpdater = new GetFile(
 			/*name=*/"GetFileDemo(jarUpdater)",
 			/*clientMetaFile=*/new File("libs/client.json"),
-			/*serverMetaURI=*/URI.create(GetFile.LATEST_JAR_URL));
+			/*serverMetaURI=*/URI.create(GetFile.LATEST_JAR_URL),
+			/*showProgress=*/true, /*ignoreErrors=*/false);
 		BackupManager jarUpdaterBak = jarUpdater.getBackupManager();
 		jarUpdaterBak.backup();
 
@@ -28,7 +29,8 @@ public class GetFileDemo {
 			/*name=*/"GetFileDemo(airbus)",
 			/*clientMetaFile=*/new File("data/airbus-client.json"),
 			/*serverMetaURI=*/URI.create(
-				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/airbus.json"));
+				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/airbus.json"),
+			/*showProgress=*/true, /*ignoreErrors=*/false);
 		BackupManager airbusBak = airbus.getBackupManager();
 		airbusBak.backup();
 
@@ -36,7 +38,8 @@ public class GetFileDemo {
 			/*name=*/"GetFileDemo(boeing)",
 			/*clientMetaFile=*/new File("data/boeing-client.json"),
 			/*serverMetaURI=*/URI.create(
-				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/boeing.json"));
+				"https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/boeing.json"),
+			/*showProgress=*/true, /*ignoreErrors=*/false);
 		BackupManager boeingBak = boeing.getBackupManager();
 		boeingBak.backup();
 

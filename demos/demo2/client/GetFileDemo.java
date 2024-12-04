@@ -10,7 +10,8 @@ public class GetFileDemo {
 		GetFile gf = new GetFile(
 			/*name=*/"GetFileDemo",
 			/*clientMetaFile=*/new File("getfile.json"),
-			/*serverMetaURI=*/URI.create("http://localhost:8088/meta.json"));
+			/*serverMetaURI=*/URI.create("http://localhost:8088/meta.json"),
+			/*showProgress=*/true, /*ignoreErrors=*/false);
 		BackupManager bm1 = gf.getBackupManager("bm1");
 		BackupManager bm2 = gf.getBackupManager("bm2");
 
