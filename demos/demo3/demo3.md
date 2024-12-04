@@ -26,5 +26,11 @@ The message "Hello! I'm an outdated JAR invoked inside GetFile.updateAll" is
 seen when running the old version. You don't need to recompile GetFileDemo,
 but the invocation requires specifying the classpath.
 
+```
+	System.out.println("\u001B[41m"
+			+ "Hello! I'm an outdated JAR invoked inside GetFile.updateAll"
+			+ "\033[0m");
+```
+
 After done with this demo, use the `clean.sh` script to revert to initial state.
 
