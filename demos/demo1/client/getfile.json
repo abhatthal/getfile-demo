@@ -8,5 +8,10 @@
     "version": "v1.0.0",
 	"path": "data/file2.txt",
     "prompt": "false"
+  },
+  "file3": {
+    "version": "v1.0.0",
+	"path": "data/file3.txt",
+    "prompt": "false"
   }
 }
