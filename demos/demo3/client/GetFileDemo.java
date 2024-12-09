@@ -19,14 +19,12 @@ public class GetFileDemo {
 			System.out.println("Rollback to 1 and prepare for future roll to 2");
 			bm2.backup();
 			System.out.println("Version on GitHub is without the message.");
-			gf.updateAll();
-			bm1.rollback();
+			gf.updateAll().thenRun(() -> bm1.rollback());
 		} else if (!bm1.backupExists() && bm2.backupExists()) {
 			System.out.println("Rollback to 2 and prepare for future roll to 1");
 			bm1.backup();
 			System.out.println("Old version should have special message.");
-			gf.updateAll();
-			bm2.rollback();
+			gf.updateAll().thenRun(() -> bm2.rollback());
 		} else {
 			bm1.backup();
 			System.out.println("Old version should have special message.");

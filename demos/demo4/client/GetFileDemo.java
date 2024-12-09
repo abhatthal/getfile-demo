@@ -46,23 +46,12 @@ public class GetFileDemo {
 		System.out.println("Update cache and backed up local data");
 		myWait();
 
-		updateFileWrapper(jarUpdater, "getfile-all");
-		updateAllWrapper(airbus);
-		updateFileWrapper(boeing, "737 Data");
-		updateFileWrapper(boeing, "767.md");
+		jarUpdater.updateFile("getfile-all");
+		airbus.updateAll();
+		boeing.updateFile("737 Data");
+		boeing.updateFile("767.md");
 		System.out.println("Updated from server");
 		myWait();
-
-		//jarUpdaterBak.rollback();
-		//airbusBak.rollback();
-		//boeingBak.rollback();
-		//System.out.println("Rolled back to backup");
-		//myWait();
-
-		System.out.print("Updated: ");
-		printFiles(updated);
-		System.out.print("\nUnchanged: ");
-		printFiles(unchanged);
 	}
 
 	public static void myWait() {
@@ -78,26 +67,5 @@ public class GetFileDemo {
 			System.out.println(f.getPath());			
 		}
 	}
-
-	// These wrappers allow us to track all updated and unchanged files across
-	// GetFile instances. In a larger example, we may create a GetFileWrapper class
-	// and store the updated/unchanged lists inside.
-
-	// Updates the file and adds the resulting File to a list of updated/unchanged files
-	public static void updateFileWrapper(GetFile instance, String fileKey) {
-		Pair<Boolean, File> pair = instance.updateFile(fileKey);
-		if (pair.getLeft()) {
-			updated.add(pair.getRight());
-		} else {
-			unchanged.add(pair.getRight());
-		}
-	}
-	// Updates all the files in the given instance and populates the updated/unchanged files
-	public static void updateAllWrapper(GetFile instance) {
-		Map<String, List<File>> mapping = instance.updateAll();
-		updated.addAll(mapping.get("updated"));
-		unchanged.addAll(mapping.get("unchanged"));			
-	}
-	
 }
 

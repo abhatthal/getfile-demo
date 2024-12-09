@@ -17,31 +17,33 @@ public class GetFileDemo {
 		BackupManager bm2 = gf.getBackupManager(); // Same instance as bm
 
 		bm1.backup();
-		gf.updateAll();
-		bm.backup();
-		System.out.println("Updated");
-		myWait();
+		gf.updateAll().thenRun(() -> {
+			bm.backup();
+			System.out.println("Updated");
+			myWait();
 
-		bm1.rollback();
-		System.out.println("Rolled back to before update.");
-		bm1.backup();
-		myWait();
+			bm1.rollback();
+			System.out.println("Rolled back to before update.");
+			bm1.backup();
+			myWait();
 
-		gf.updateFile("file2");
-		System.out.println("Update just file2");
-		myWait();
+			gf.updateFile("file2").thenRun(() -> {
+				System.out.println("Update just file2");
+				myWait();
 
-		bm2.rollback();
-		System.out.println("Roll back to after update.");
-		myWait();
-		
-		System.out.println("Rolled back to before update.");
-		bm1.rollback();
-		System.out.println("Delete server cache");
-		File serverMetaCache = new File("meta.json");
-		if (serverMetaCache.exists()) {
-			serverMetaCache.delete();
-		}
+				bm2.rollback();
+				System.out.println("Roll back to after update.");
+				myWait();
+				
+				System.out.println("Rolled back to before update.");
+				bm1.rollback();
+				System.out.println("Delete server cache");
+				File serverMetaCache = new File("meta.json");
+				if (serverMetaCache.exists()) {
+					serverMetaCache.delete();
+				}
+			});
+		});
 	}
 
 	public static void myWait() {
