@@ -11,7 +11,7 @@ public class GetFileDemo {
 			/*name=*/"GetFileDemo",
 			/*clientMetaFile=*/new File("libs/client.json"),
 			/*serverMetaURI=*/URI.create(GetFile.LATEST_JAR_URL),
-			/*showProgress=*/true, /*ignoreErrors=*/false);
+			/*showProgress=*/true);
 		BackupManager bm1 = gf.getBackupManager("bm1");
 		BackupManager bm2 = gf.getBackupManager("bm2");
 

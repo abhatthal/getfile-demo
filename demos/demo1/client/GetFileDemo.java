@@ -11,7 +11,7 @@ public class GetFileDemo {
 			/*name=*/"GetFileDemo",
 			/*clientMetaFile=*/new File("getfile.json"),
 			/*serverMetaURI=*/URI.create("http://localhost:8088/meta.json"),
-			/*showProgress=*/true, /*ignoreErrors=*/false);
+			/*showProgress=*/true);
 		BackupManager bm = gf.getBackupManager();
 		BackupManager bm1 = gf.getBackupManager("1"); // New instance
 		BackupManager bm2 = gf.getBackupManager(); // Same instance as bm
