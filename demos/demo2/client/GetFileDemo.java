@@ -26,7 +26,7 @@ public class GetFileDemo {
 		} else {
 			System.out.println("Backup initial state and update");
 			bm1.backup();
-			gf.updateAll();
+			gf.updateAll().join();
 		}
 	}
 }

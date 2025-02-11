@@ -42,8 +42,8 @@ public class GetFileDemo {
 				if (serverMetaCache.exists()) {
 					serverMetaCache.delete();
 				}
-			});
-		});
+			}).join();
+		}).join();
 	}
 
 	public static void myWait() {

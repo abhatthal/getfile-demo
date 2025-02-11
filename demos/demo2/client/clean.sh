@@ -1,5 +1,5 @@
 #!/bin/sh
 
-rm *.json* *.class
+rm *.json*
 rm -rf data/
 

@@ -7,6 +7,7 @@ import java.net.URI;
 import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -46,12 +47,15 @@ public class GetFileDemo {
 		System.out.println("Update cache and backed up local data");
 		myWait();
 
-		jarUpdater.updateFile("getfile-all");
-		airbus.updateAll();
-		boeing.updateFile("737 Data");
-		boeing.updateFile("767.md");
+		CompletableFuture<?> future1 = jarUpdater.updateFile("getfile-all");
+		CompletableFuture<?> future2 = airbus.updateAll();
+		CompletableFuture<?> future3 = boeing.updateFile("737 Data");
+		CompletableFuture<?> future4 = boeing.updateFile("767.md");
+
+		CompletableFuture<?> allFutures = CompletableFuture.allOf(
+				future1, future2, future3, future4);
+		allFutures.join();
 		System.out.println("Updated from server");
-		myWait();
 	}
 
 	public static void myWait() {

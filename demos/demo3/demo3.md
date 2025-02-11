@@ -16,7 +16,6 @@ demonstrate the changes.
 
 ```
 cd client
-javac -cp .:libs/getfile-all.jar GetFileDemo.java
 java -cp .:libs/getfile-all.jar GetFileDemo
 ```
 

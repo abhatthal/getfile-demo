@@ -12,8 +12,7 @@ We will demonstrate
 
 ```
 cd client
-javac -cp .:libs/getfile-all.jar GetFileDemo.java
-java -cp .:libs/getfile-all.jar GetFileDemo
+java -cp .:libs/getfile-all.jar GetFileDemo.java
 ```
 
 After done with this demo, use the `clean.sh` script to revert to initial state.

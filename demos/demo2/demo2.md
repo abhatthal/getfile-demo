@@ -18,7 +18,6 @@ python3 -m http.server 8088
 ## Terminal 2: Run GetFileDemo
 ```
 cd client
-javac -cp .:libs/getfile-all.jar GetFileDemo.java
 java -cp .:libs/getfile-all.jar GetFileDemo
 ```
 Rerun GetFileDemo multiple times to observe the toggling between updated and
