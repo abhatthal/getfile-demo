@@ -30,8 +30,8 @@ public class GetFileDemo {
 			/*name=*/"GetFileDemo(airbus)",
 			/*clientMetaFile=*/new File("data/airbus-client.json"),
 			/*serverMetaURIs=*/List.of(
-                    URI.create("https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/airbus.json"),  // /project/scec_608/public
-                    URI.create("https://g-3a9041.a78b8.36fe.data.globus.org/getfile-demo/planes/airbus.json")), // /project2/scec_608/public
+                    URI.create("https://opensha.scec.org/getfile-demo/planes/airbus.json"),  // OpenSHA
+                    URI.create("https://g-3a9041.a78b8.36fe.data.globus.org/getfile-demo/planes/airbus.json")), // CARC /project2/scec_608/public
 			/*showProgress=*/true);
 		BackupManager airbusBak = airbus.getBackupManager();
 		airbusBak.backup();
@@ -40,8 +40,8 @@ public class GetFileDemo {
 			/*name=*/"GetFileDemo(boeing)",
 			/*clientMetaFile=*/new File("data/boeing-client.json"),
             /*serverMetaURIs=*/List.of(
-                URI.create("https://g-3a9041.a78b8.36fe.data.globus.org/getfile-demo/planes/boeing.json"),  // /project2/scec_608/public
-                URI.create("https://g-c662a6.a78b8.36fe.data.globus.org/getfile-demo/planes/boeing.json")), // /project/scec_608/public
+                URI.create("https://g-3a9041.a78b8.36fe.data.globus.org/getfile-demo/planes/boeing.json"),  // CARC /project2/scec_608/public
+                URI.create("https://opensha.scec.org/getfile-demo/planes/boeing.json")), // OpenSHA
 			/*showProgress=*/true);
 		BackupManager boeingBak = boeing.getBackupManager();
 		boeingBak.backup();

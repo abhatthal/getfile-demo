@@ -8,7 +8,7 @@ This demo will use three GetFile instances
 We will demonstrate
 * How a single project can use multiple GetFile instances
 * How the output of updateAll and updateFile can be read
-* Reading data off both CARC and GitHub
+* Reading data off CARC, the OpenSHA server, and GitHub
 
 ```
 cd client
